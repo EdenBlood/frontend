@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { tasks } from "@/mocks/index";
+// import { tasks } from "@/mocks/index";
 import { useEffect, useState } from "react";
 import type { TaskDraft } from "../types";
 
@@ -10,10 +10,10 @@ export function TaskInfo() {
   const [task, setTask] = useState<TaskDraft | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    setTask(tasks.find((task) => task.id === taskId)!);
-    setIsLoading(false);
-  }, [taskId]);
+  // useEffect(() => {
+  //   setTask(tasks.find((task) => task.id === taskId)!);
+  //   setIsLoading(false);
+  // }, [taskId]);
 
   if (!taskId) return null;
   if (isLoading) return <div>Cargando...</div>;
