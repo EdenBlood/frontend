@@ -12,7 +12,7 @@
       "@/types/*": ["types/*"],
       "@/extensions/*": ["extensions/*"],
       "@/layouts/*": ["layouts/*"],
-      "@/lib/*": ["lib/*"],
+      "@/libs/*": ["libs/*"],
       "@/services/*": ["services/*"],
       "@/constants/*": ["constants/*"],
       "@/views/*": ["views/*"],
