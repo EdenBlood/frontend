@@ -3,6 +3,7 @@ import { DashBoard } from "./layouts/DashBoard";
 import { TaskView } from "./views/TaskView";
 import { ListLayout } from "./layouts/ListLayout";
 import { CreateTaskView } from "./views/CreateTaskView";
+import { EditTaskView } from "./views/EditTaskView";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
           },
           {
             path: ":taskId/edit",
-            element: <TaskView />,
+            element: <EditTaskView />,
           },
         ],
       },
