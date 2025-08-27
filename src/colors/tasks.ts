@@ -12,3 +12,9 @@ export const tasksColorStatus = {
     noActive: "bg-yellow-200 hover:bg-yellow-400",
   },
 };
+
+export const tasksColorStatusText = {
+  completed: "text-green-400",
+  inProgress: "text-indigo-400",
+  notStarted: "text-yellow-400",
+};
