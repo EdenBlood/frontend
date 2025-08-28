@@ -32,6 +32,10 @@ export type TaskFormData = Pick<
 >;
 
 //*  Api response
+export const apiMsgResponseSchema = z.object({
+  msg: z.string(),
+});
+
 export const apiTaskFullResponseSchema = z.object({
   msg: z.string(),
   task: taskDraftSchema,

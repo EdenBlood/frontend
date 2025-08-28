@@ -12,6 +12,7 @@ export function useEditTask() {
       //* toastify data.msg
       //* queryclient actualizar con data.task
       queryClient.invalidateQueries({ queryKey: ["task", data?.task._id] });
+      queryClient.invalidateQueries({ queryKey: ["tasks"] });
 
       navigate(`/tasks/${data?.task._id}`);
     },
