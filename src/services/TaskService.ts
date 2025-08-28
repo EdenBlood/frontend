@@ -1,6 +1,7 @@
 import api from "@/libs/api";
 import { isAxiosError } from "axios";
 import {
+  apiMsgResponseSchema,
   apiTaskFullResponseSchema,
   apiTaskListResponseSchema,
   type TaskFormData,
@@ -64,6 +65,21 @@ export default {
 
       const response = apiTaskFullResponseSchema.safeParse(data);
       if (response.success) return response.data;
+    } catch (error) {
+      if (isAxiosError(error) && error.response) {
+        throw new Error(error.response.data.error);
+      }
+    }
+  },
+
+  deleteTask: async ({ taskId }: { taskId: string }) => {
+    const url = `/tasks/${taskId}`;
+
+    try {
+      const { data } = await api.delete(url);
+
+      const response = apiMsgResponseSchema.safeParse(data);
+      if (response.success) return response.data.msg;
     } catch (error) {
       if (isAxiosError(error) && error.response) {
         throw new Error(error.response.data.error);
