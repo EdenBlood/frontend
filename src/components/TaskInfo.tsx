@@ -6,6 +6,12 @@ interface TaskInfoProps {
   taskId: string;
 }
 
+const statusTranslate = {
+  inProgress: "En progreso",
+  completed: "Completado",
+  notStarted: "No empezada",
+};
+
 export function TaskInfo({ taskId }: TaskInfoProps) {
   const { taskData, taskError, taskLoading } = useGetTaskById({ taskId });
 
@@ -21,9 +27,9 @@ export function TaskInfo({ taskId }: TaskInfoProps) {
         <p className="font-bold">
           Estado:{" "}
           <span
-            className={tasksColorStatusText[taskData!.status!] + " font-normal"}
+            className={tasksColorStatusText[taskData!.status] + " font-normal"}
           >
-            {taskData?.status}
+            {statusTranslate[taskData!.status]}
           </span>
         </p>
 
